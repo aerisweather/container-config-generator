@@ -1,0 +1,29 @@
+{
+  "name": "container-config-generator",
+  "version": "0.1.0",
+  "description": "A container configuration generator. Composable configurations for various container management systems and environments.",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/aerisweather/container-config-generator.git"
+  },
+  "keywords": [
+    "container",
+    "docker",
+    "kubernetes",
+    "config",
+    "dev-ops"
+  ],
+  "author": "Seth Miller <smiller@aerisweather.com>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/aerisweather/container-config-generator/issues"
+  },
+  "homepage": "https://github.com/aerisweather/container-config-generator#readme",
+  "dependencies": {
+    "admiral-cli": "^0.8.0"
+  }
+}
