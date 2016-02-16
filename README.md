@@ -9,12 +9,21 @@ Features
 * Extensible configurations for different environments.
 * Consistent environment file support.
 
-| Config Path | Description | Docker Compose Context | Kubernetes Context |
-| ----------- | ----------- | ---------------------- | ------------------ |
+| Config Key | Description | Docker Compose Context | Kubernetes Context |
+| ---------- | ----------- | ---------------------- | ------------------ |
+| `$extends` | The parent json file to extend from (relative to the extender) | Will override config from parent | Will override config from parent | 
 | `applicationName` | The name for the deploying application | n/a | The Kubernetes context these containers will be deployed to |
 | `instanceName` | Name of this particular deployment of this app, a version number | The prefix for all the containers | A suffix for all the Replication Controllers. Best practice for repeatable deployments and rolling updates |
+| `containers` | An object of container objects, see below | | |
 
-name (container_name)
+#### Containers
+
+| Config Key | Description | Docker Compose Context | Kubernetes Context | 
+| ---------- | ----------- | ---------------------- | ------------------ |
+| `name` | The name of the container | Part of `container_name` | Part of the name of the Service |
+| `labels` | A key/value hash | The values of `labels` | The labels used to identify the Resource Controller |
+
+
 labels
 image (build?)
 k - replicas
@@ -46,6 +55,7 @@ Config Format
 -------------
 ```JSON
 {
+	"$extends": "../main.json",
 	"application": "myApp",
 	"instanceName": "v123",
 	"containers":
