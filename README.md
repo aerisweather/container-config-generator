@@ -7,13 +7,14 @@ Using a one config to rule them all strategy, combines extensible configurations
 Features
 --------
 * Extensible configurations for different environments.
-* Consistent environment file support.
+* Consistent environment variable/file support.
 
 | Config Key | Description | Docker Compose Context | Kubernetes Context |
 | ---------- | ----------- | ---------------------- | ------------------ |
 | `$extends` | The parent json file to extend from (relative to the extender) | Will override config from parent | Will override config from parent | 
 | `applicationName` | The name for the deploying application | n/a | The Kubernetes context these containers will be deployed to |
 | `instanceName` | Name of this particular deployment of this app, a version number | The prefix for all the containers | A suffix for all the Replication Controllers. Best practice for repeatable deployments and rolling updates |
+| `options` | Options for the renderer | Uses `docker-compose` child key for options | Uses `kubernetes` child key for options |
 | `containers` | An object of container objects, see below | | |
 
 #### Containers
@@ -22,9 +23,10 @@ Features
 | ---------- | ----------- | ---------------------- | ------------------ |
 | `name` | The name of the container | Part of `container_name` | Part of the name of the Service |
 | `labels` | A key/value hash | The values of `labels` | The labels used to identify the Resource Controller |
+| `image` | The container image to use | The container image to use | The container image to use |
+| `ports` | A list of ports to expose | | |
 
 
-labels
 image (build?)
 k - replicas
 k - imagePullPolicy

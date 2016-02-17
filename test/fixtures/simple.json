@@ -1,0 +1,15 @@
+{
+	"applicationName": "simple",
+	"instanceName": "v1",
+	"containers": {
+		"redis-master": {
+			"name": "master",
+			"image": "redis",
+			"ports": {
+				"redis": {
+					"port": 6379
+				}
+			}
+		}
+	}
+}

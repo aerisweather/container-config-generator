@@ -1,0 +1,43 @@
+{
+	"apiVersion": "v1",
+	"kind": "ReplicationController",
+	"metadata": {
+		"labels": {
+			"name": "frontend"
+		},
+		"name": "frontend"
+	},
+	"spec": {
+		"replicas": 3,
+		"selector": {
+			"name": "frontend"
+		},
+		"template": {
+			"metadata": {
+				"labels": {
+					"name": "frontend"
+				}
+			},
+			"spec": {
+				"containers": [
+					{
+						"env": [
+							{
+								"name": "GET_HOSTS_FROM",
+								"value": "dns"
+							}
+						],
+						"image": "gcr.io/google_samples/gb-frontend:v3",
+						"name": "php-redis",
+						"ports": [
+							{
+								"name": "http",
+								"containerPort": 80
+							}
+						]
+					}
+				]
+			}
+		}
+	}
+}

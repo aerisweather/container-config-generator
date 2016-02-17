@@ -1,0 +1,8 @@
+{
+	"options" : {
+		"output": {
+			"kubernetes": true,
+			"docker-compose": true
+		}
+	}
+}

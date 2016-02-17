@@ -1,6 +1,7 @@
 //Take a config, merge accordingly
 //Output in specified format
 const Cli = require('admiral-cli'),
+	fs = require('fs-extra'),
 	path = require('path');
 
 const cli = new Cli();
@@ -24,3 +25,24 @@ cli
 		required: true,
 		default: path.join(__dirname, 'output')
 	});
+
+try {
+	cli.parse();
+}
+catch (error) {
+	console.error(error);
+	if (error instanceof Cli.CliInvalidInputError) {
+		process.exit(2);
+	}
+	else if (error instanceof Cli.CliConfigError) {
+		console.error('Doh, configured something wrong.', error);
+		process.exit(1);
+	}
+}
+
+// Load and parse config file
+
+// Setup output directory
+fs.ensureDirSync(cli.params.outputPath);
+
+// Pass data to generator

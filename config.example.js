@@ -1,5 +1,13 @@
 // This is a JSON file representing
-var containers = {
+var app = {
+	"$extends": "../main.json",
+	"applicationName": "myWebApp",
+	"instanceName": "v110",
+	"containers": {
+
+	}
+
+}
 	"containerName": {
 		"name":   "containerName",
 		"labels": {

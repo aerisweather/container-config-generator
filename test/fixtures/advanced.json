@@ -1,0 +1,16 @@
+{
+	"$extends" : "./simple.json",
+	"applicationName": "testing",
+	"instanceName": "v1",
+	"containers": {
+		"redis-slave": {
+			"name": "slave",
+			"image": "redis",
+			"ports": {
+				"redis": {
+					"port": 6379
+				}
+			}
+		}
+	}
+}
