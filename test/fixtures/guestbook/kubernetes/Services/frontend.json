@@ -15,7 +15,7 @@
 			}
 		],
 		"selector": {
-			"name": "frontend"
+			"role": "frontend"
 		}
 	}
 }

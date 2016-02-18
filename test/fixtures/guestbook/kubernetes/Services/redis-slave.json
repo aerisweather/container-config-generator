@@ -15,7 +15,8 @@
 			}
 		],
 		"selector": {
-			"name": "redis-slave"
+			"role": "storage",
+			"subRole": "slave"
 		}
 	}
 }

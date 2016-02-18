@@ -53,6 +53,11 @@ Output Formats
 
 ### Kuberentes (v1.x)
 
+Some quick Kubernetes best practices:
+
+* Use DNS - The internal environment vars can be unreliable and you can run into circular dependency issues on startup.
+* Deploy ReplicationControllers with a unique deployment identifier so we can rolling update to a new version later
+
 Config Format
 -------------
 ```JSON

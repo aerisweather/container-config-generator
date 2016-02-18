@@ -68,4 +68,10 @@ describe("Render - Kuberentes", function () {
 				assert.equal(renderedSvc.spec.selector.name, "redis-master");
 			})
 	});
+
+	it("should render a full application", function() {
+		const config = fs.readJsonSync(path.join(__dirname, '..', '..', '..', 'fixtures', 'guestbook', 'config.json'));
+
+
+	});
 });

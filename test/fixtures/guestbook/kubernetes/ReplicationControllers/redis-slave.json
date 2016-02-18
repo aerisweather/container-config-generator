@@ -3,19 +3,23 @@
 	"kind": "ReplicationController",
 	"metadata": {
 		"labels": {
-			"name": "redis-slave"
+			"name": "redis-slave-v1",
+			"role": "storage",
+			"subRole": "slave"
 		},
-		"name": "redis-slave"
+		"name": "redis-slave-v1"
 	},
 	"spec": {
 		"replicas": 2,
 		"selector": {
-			"name": "redis-slave"
+			"name": "redis-slave-v1"
 		},
 		"template": {
 			"metadata": {
 				"labels": {
-					"name": "redis-slave"
+					"name": "redis-slave-v1",
+					"role": "storage",
+					"subRole": "master"
 				}
 			},
 			"spec": {

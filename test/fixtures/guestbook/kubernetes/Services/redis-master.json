@@ -15,7 +15,8 @@
 			}
 		],
 		"selector": {
-			"name": "redis-master"
+			"role": "storage",
+			"subRole": "master"
 		}
 	}
 }

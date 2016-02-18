@@ -3,19 +3,20 @@
 	"kind": "ReplicationController",
 	"metadata": {
 		"labels": {
-			"name": "frontend"
+			"name": "frontend-v1"
 		},
-		"name": "frontend"
+		"name": "frontend-v1"
 	},
 	"spec": {
 		"replicas": 3,
 		"selector": {
-			"name": "frontend"
+			"name": "frontend-v1"
 		},
 		"template": {
 			"metadata": {
 				"labels": {
-					"name": "frontend"
+					"name": "frontend-v1",
+					"role": "frontend"
 				}
 			},
 			"spec": {

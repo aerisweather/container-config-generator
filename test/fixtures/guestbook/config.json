@@ -1,6 +1,6 @@
 {
 	"applicationName": "guestbook",
-	"instanceName": "first",
+	"instanceName": "v1",
 	"containers": {
 		"redis-master": {
 			"name": "master",
@@ -9,6 +9,10 @@
 				"redis": {
 					"port": 6379
 				}
+			},
+			"label": {
+				"role": "storage",
+				"subRole": "master"
 			}
 		},
 		"redis-slave": {
@@ -22,7 +26,11 @@
 			"env": {
 				"GET_HOSTS_FROM": "dns"
 			},
-			"replicas": 2
+			"replicas": 2,
+			"label": {
+				"role": "storage",
+				"subRole": "slave"
+			}
 		},
 		"frontend": {
 			"name": "php-redis",
@@ -35,7 +43,10 @@
 			"env": {
 				"GET_HOSTS_FROM": "dns"
 			},
-			"replicas": 3
+			"replicas": 3,
+			"label": {
+				"role": "frontend"
+			}
 		}
 	}
 }
